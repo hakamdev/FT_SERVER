@@ -8,7 +8,7 @@ apt-get install php7.3-fpm php7.3-common php7.3-mysql php7.3-curl php7.3-json ph
 apt-get install wget expect lsb-release debconf-utils gnupg -y
 mv      default /etc/nginx/sites-available/
 #       Key & Cert were generated using the following command:
-#       $> openssl req  -nodes -new -x509  -keyout localhost.key -out localhost.cert
+#       $> openssl req  -nodes -new -x509  -keyout localhost.key -out localhost.crt
 mv      localhost.crt /etc/ssl/certs/
 mv      localhost.key /etc/ssl/private/
 mv      index.nginx-debian.html /var/www/html/
