@@ -2,7 +2,6 @@
 #   Author: Ehakam      #
 #########################
 echo    "======================= Beginning of MYSQLSERVER Configuration =========================="
-apt-get install expect lsb-release debconf-utils gnupg -y
 wget    https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb
 expect -c "
     set timeout 10
@@ -15,7 +14,7 @@ expect -c "
     send \"4\r\"
     expect EOF
  "
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 debconf-set-selections <<< "mysql-community-server mysql-community-server/root-pass password root"
 debconf-set-selections <<< "mysql-community-server mysql-community-server/re-root-pass password root"
 apt-get update
@@ -32,4 +31,5 @@ mysql -u hakam -phakam  phpmyadmin < phpmyadmin.sql
 
 echo    "Cleaning up"
 rm      -f mysql-apt-config_0.8.14-1_all.deb setup_dependencies.sh setup_mysql.sh setup_phpmyadmin.sh setup_wordpress.sh wp_db.sql phpmyadmin.sql
+apt     clean
 echo    "=========================== End of MYSQLSERVER Configuration ============================="
