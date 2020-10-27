@@ -26,7 +26,7 @@ mysql -u root -proot -e "CREATE DATABASE wp_db"
 mysql -u root -proot -e "CREATE DATABASE phpmyadmin"
 mysql -u root -proot -e "CREATE USER 'hakam'@'localhost' IDENTIFIED BY 'hakam'"
 mysql -u root -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'hakam'@'localhost'"
-# mysql -u hakam -phakam  wp_db < wp_db.sql
+mysql -u hakam -phakam  wp_db < wp_db.sql
 mysql -u hakam -phakam  phpmyadmin < phpmyadmin.sql
 
 echo    "Cleaning up"
