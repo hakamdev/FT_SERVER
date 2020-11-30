@@ -2,7 +2,7 @@
 #   Author: Ehakam      #
 #########################
 echo    "======================= Beginning of MYSQLSERVER Configuration =========================="
-wget    https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb
+# wget    https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb
 expect -c "
     set timeout 10
     spawn dpkg -i mysql-apt-config_0.8.14-1_all.deb
