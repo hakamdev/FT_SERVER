@@ -12,4 +12,8 @@ mv      default /etc/nginx/sites-available/
 mv      localhost.crt /etc/ssl/certs/
 mv      localhost.key /etc/ssl/private/
 mv      index.nginx-debian.html /var/www/html/
+rm		-rf /etc/nginx/nginx.conf
+chown	www-data:www-data nginx.conf
+mv		nginx.conf /etc/nginx/
+
 echo    "=========================== End of DEPENDENCIES Configuration ============================="
